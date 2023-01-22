@@ -30,3 +30,4 @@ value_warning_text = warning_text.text
 assert value_warning_text == "Epic sadface: Username and password do not match any user in this service"
 print("Negaive tast - success")
 
+driver_g.refresh()
