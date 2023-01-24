@@ -35,5 +35,5 @@ print("End of the test")
 time.sleep(3)
 now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S") # получение текущей даты (год-месяц-число) и времени (часы-мин-сек)
 screenshot_name = 'screenshot ' + now_date + '.png'
-driver_g.save_screenshot('C:\\Users\\Tanya\\PycharmProjects\\TestAutomation\\screen\\' + screenshot_name)  # сохранение в папку
+driver_g.save_screenshot('C:\\Users\\Tanya\\PycharmProjects\\TestAutomation\\screen\\' + screenshot_name)  # сохранение в указанную папку
 print("Screenshot create - success")
