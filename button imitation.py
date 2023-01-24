@@ -24,6 +24,7 @@ user_name.send_keys("r")
 password = driver_g.find_element(By.XPATH, '//input[@id="password"]')
 password.send_keys(password_all)
 print("Password input - success")
+time.sleep(2)
 password.send_keys(Keys.RETURN)  #Enter
 
 # Выпадающая фильтрация
@@ -33,8 +34,8 @@ print("Click Filter- success")
 time.sleep(2)
 filter_product.send_keys(Keys.ARROW_DOWN)
 time.sleep(2)
-filter_product.send_keys(Keys.PAGE_DOWN)
-time.sleep(2)
+# filter_product.send_keys(Keys.PAGE_DOWN)
+# time.sleep(2)
 filter_product.send_keys(Keys.RETURN)
 
 
