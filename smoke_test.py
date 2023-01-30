@@ -60,3 +60,52 @@ print("Cost in cart is correct")
 
 # checkout
 checkout = driver_g.find_element(By.XPATH, "//button[@class='btn btn_action btn_medium checkout_button']")
+checkout.click()
+print("Checkout click - success")
+
+# input info
+first_name = driver_g.find_element(By.XPATH, "//input[@id='first-name']")
+first_name.send_keys("Tanya")
+print("Input first name - success")
+
+last_name = driver_g.find_element(By.XPATH, "//input[@id='last-name']")
+last_name.send_keys("Koptashkina")
+print("Input last name - success")
+
+postal_code = driver_g.find_element(By.XPATH, "//input[@id='postal-code']")
+postal_code.send_keys("1337")
+print("Input postal code - success")
+
+time.sleep(2)
+continue_button = driver_g.find_element(By.XPATH, "//input[@id='continue']")
+continue_button.click()
+print("Go to checkout overview - success")
+
+# checkout overview
+
+finish_product_1 = driver_g.find_element(By.XPATH, "//a[@id='item_4_title_link']")
+value_finish_product_1 = finish_product_1.text
+print("Product in overview " + value_finish_product_1)
+
+finish_price_product_1 = driver_g.find_element(By.XPATH, "//div[@class='inventory_item_price']")
+value_finish_price_product_1 = finish_price_product_1.text
+print("Costs: " + value_finish_price_product_1)
+
+summary_price = driver_g.find_element(By.XPATH, "//div[@class='summary_subtotal_label']")
+value_summary_price = summary_price.text
+print("Summary price: " + value_summary_price)
+item_total = "Item total: " + value_finish_price_product_1
+print(item_total)
+
+# check
+assert value_product_1 == value_finish_product_1
+print("Product in overview is the same as in cart")
+assert value_price_product_1 == value_finish_price_product_1
+print("Cost in overview is the same as in cart")
+assert value_summary_price == item_total
+print("Summary price is the same as in overview")
+
+time.sleep(1)
+
+print("Smoke test - success!")
+driver_g.close()
