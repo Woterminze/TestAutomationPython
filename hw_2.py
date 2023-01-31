@@ -77,6 +77,7 @@ cart_product_2_price = driver_g.find_element(By.XPATH, "//*[@id='cart_contents_c
 value_cart_product_2_price = cart_product_2_price.text
 print("Costs: " + value_cart_product_2_price)
 
+time.sleep(1)
 # check
 assert value_product_1 == value_cart_product_1
 print("Product 1 is correct")
@@ -106,6 +107,7 @@ postal_code = driver_g.find_element(By.XPATH, "//input[@id='postal-code']")
 postal_code.send_keys("1337")
 print("Input postal code - success")
 
+time.sleep(1)
 continue_button = driver_g.find_element(By.XPATH, "//input[@id='continue']")
 continue_button.click()
 print("Go to checkout overview - success")
