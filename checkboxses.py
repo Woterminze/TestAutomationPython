@@ -14,7 +14,7 @@ driver_g.maximize_window()
 toggle_button = driver_g.find_element(By.XPATH, '//button[@aria-label="Toggle"]')
 toggle_button.click()
 
-check_box_desktop = driver_g.find_element(By.XPATH, "//*[@class='rct-icon rct-icon-expand-close']")
+check_box_desktop = driver_g.find_element(By.XPATH, "//*[@class='rct-icon rct-icon-expand-close']")  # типа свернуто
 check_box_desktop.click()
 
 driver_g.find_element(By.XPATH, "//span[contains(text(),'Notes')]").click()  # более короткий формат, нажимаем на Notes
