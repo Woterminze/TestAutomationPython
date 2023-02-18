@@ -42,4 +42,5 @@ get_url = driver_g.current_url
 print(get_url)
 assert url == get_url
 print("End of the hidden elements test - success")
+time.sleep(2)
 driver_g.close()
