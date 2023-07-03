@@ -1,4 +1,3 @@
-import datetime
 from datetime import datetime, timedelta
 import time
 from selenium import webdriver
@@ -7,6 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
 options = webdriver.ChromeOptions()
+options.add_argument("--start-maximized")
 options.add_experimental_option("detach", True)
 g = Service('C:\\Users\\Tanya\\PycharmProjects\\TestAutomation\\chromedriver.exe')
 driver_g = webdriver.Chrome(options=options, service=g)
@@ -27,10 +27,12 @@ current_date_string = current_date.strftime('%m/%d/%Y')
 # текущая дата + 10 дней
 future_date = datetime.today() + timedelta(days=10)
 future_date_format = future_date.strftime('%m/%d/%Y')
+
 print("Прибавили к текущей дате 10 дней и привели к формату, нужному на сайте...")
 print("Как же я долго не могла додуматься до оптимального решения, Вы бы знали))")
 
 new_date.send_keys(future_date_format)
 print("Test - success!!!")
-
+time.sleep(5)
 driver_g.close()
+
